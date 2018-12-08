@@ -1,0 +1,12 @@
+body{
+    background-color:pink;
+  }
+  
+  .card{
+    background-color:white;
+  }
+  
+  #submit{
+    margin-top:20px;
+    width:100%;
+  }
