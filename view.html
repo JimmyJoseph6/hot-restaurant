@@ -27,6 +27,7 @@
 
 .btn-large{
     background-color:tomato;
+    width:100%;
 }</style>
 
 <body>
@@ -38,8 +39,14 @@
                   <div class='startCard col s12 center-align'>
                       <h1>Hot Restaurant </h1><br>
                     <div class='section'>
-                      <a href='/add' class="waves-effect waves-light btn-large">Make Reservation</a>
-                      <a href='/' class="waves-effect waves-light btn-large">Home</a>
+                      <div class='row'>
+                        <div class='col s6'>
+                            <a href='/add' class="waves-effect waves-light btn-large">Reserve Table</a>
+                        </div>
+                        <div class='col s6'>
+                            <a href='/' class="waves-effect waves-light btn-large">Home</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
               </div>
@@ -72,10 +79,15 @@
     
     <div class='section' id='Homelinks'>
       <div class='row'>
-        <div class='col s6 center-aligned'>
+        <div class='col s4 left-align'>
           <a href=''>Clear Table</a>
+      </div>
+      <div class='col s4 center-align'>
           <a href=''>API Table Link</a>
+      </div>
+      <div class='col s4 right-align'>
           <a href=''>API Wait List</a>
+      </div>
     </div>
   </div>
 
