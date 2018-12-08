@@ -1,5 +1,5 @@
 body{
-    background-color:pink;
+    background-color:rgb(132, 180, 194);
   }
   
   .card{
@@ -9,4 +9,8 @@ body{
   #submit{
     margin-top:20px;
     width:100%;
+  }
+
+  .btn-large{
+      background-color:tomato;
   }
