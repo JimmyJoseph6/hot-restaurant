@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
   <link type="text/css" rel="stylesheet" href="./style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -52,7 +52,7 @@
            <div class="input-field col s12">
             <input placeholder="Unique ID" id="uniqueID" type="text" class="validate">
            </div>
-           <button class="btn waves-effect waves-light" id='submit' type="submit" name="action">Submit
+           <button class="btn waves-effect waves-light" id='submit'>Submit
             <i class="material-icons right">send</i>
           </button>
         </form>
@@ -69,7 +69,33 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="./../app.js"></script>
+  <script>
+      $('#submit').on("click",function(){
+          console.log(event);
+          event.preventDefault();
+          let name = $("#name")[0].value;
+          let email=$("#email")[0].value;
+          let phone=$("#phoneNumber")[0].value;
+          let id=$("#uniqueID")[0].value;
+
+            var newTable={
+                name:name,
+                phone:phone,
+                email:email,
+                id:id
+            }
+
+            console.log(newTable)
+
+            $.post("/api/tables",newTable).then(function(data){
+                console.log(data);
+            })
+          
+      });
+      
+
+  </script>
+
 </body>
 
 </html>
