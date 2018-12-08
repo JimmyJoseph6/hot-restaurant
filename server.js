@@ -77,9 +77,17 @@ res.sendFile(path.join(__dirname, "add.html"));
 
     console.log(newTable);
 
-    atTable.push(newTable);
+    if (atTable.length >= 5) {
 
-    res.json(newTable);
+    waiting.push(newTable);
+
+    res.json(waiting); }
+    else {
+    
+    atTable.push(newTable);
+    res.json(atTable);
+    }
+
   });
 
 
