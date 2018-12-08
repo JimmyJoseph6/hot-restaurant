@@ -50,23 +50,27 @@ app.use(express.json());
 
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
-  });
+  res.sendFile(path.join(__dirname, "home.html"));
+});
 
 
 app.get("/add", function(req, res) {
 res.sendFile(path.join(__dirname, "add.html"));
-  });
+});
+
+app.get("/view", function(req, res) {
+  res.sendFile(path.join(__dirname, "view.html"));
+});
 
 
-  app.get("/api/tables", function(req, res) {
-    return res.json(atTable);
-  });
+app.get("/api/tables", function(req, res) {
+  return res.json(atTable);
+});
 
 
-  app.get("/api/waitlist", function(req, res) {
-    return res.json(waiting);
-  });
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waiting);
+});
 
 // post to add to the array
   app.post("/api/tables", function(req, res) {
